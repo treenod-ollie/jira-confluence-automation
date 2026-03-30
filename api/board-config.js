@@ -1,7 +1,9 @@
 const axios = require('axios');
 const { JIRA_URL, BOARD_ID, getHeaders } = require('../lib/atlassian');
+const { checkIp } = require('../lib/ip-guard');
 
 module.exports = async function handler(req, res) {
+  if (!checkIp(req, res)) return;
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

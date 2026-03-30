@@ -4,8 +4,10 @@ const {
   extractTasksFromPage, extractDevelopmentPeriod,
   createJiraTicket, transitionIssue
 } = require('../lib/atlassian');
+const { checkIp } = require('../lib/ip-guard');
 
 module.exports = async function handler(req, res) {
+  if (!checkIp(req, res)) return;
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
