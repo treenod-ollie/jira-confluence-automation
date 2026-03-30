@@ -23,5 +23,8 @@ Thumbs.db
 *.swp
 *.swo
 
+# Vercel
+.vercel/
+
 # Claude Code
 .claude/personal/

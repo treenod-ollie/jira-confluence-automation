@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/create-tickets.js": {
+      "maxDuration": 60
+    }
+  }
+}
