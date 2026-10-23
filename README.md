@@ -4,6 +4,16 @@ Confluence 페이지에서 스펙 담당자를 지정하면 자동으로 JIRA �
 
 ## 설치 및 실행
 
+Node.js 24.22.1 이상인 24.x를 사용합니다. 설치는 커밋된 lockfile 기준으로 실행합니다.
+
+```bash
+nvm install && nvm use
+node --version
+npm ci
+```
+
+Vercel은 `package.json`의 Node 24 범위를 적용하며, 실제 패치 버전은 Vercel에서 관리합니다. 변경 후 재배포하고 빌드 로그의 `node --version` 또는 실행 환경의 `process.version`으로 24.22.1 이상인지 확인하세요.
+
 ### 1. 환경 설정 확인
 `.env` 파일의 정보가 올바르게 설정되어 있는지 확인하세요:
 ```
@@ -89,7 +99,7 @@ http://localhost:3000
 
 ## 개발 환경
 
-- Node.js 14+
+- Node.js 24.22.1 이상인 24.x
 - Express.js 4.x
 - Axios (HTTP 클라이언트)
 
